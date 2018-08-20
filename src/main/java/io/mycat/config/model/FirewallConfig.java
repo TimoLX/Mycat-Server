@@ -27,7 +27,6 @@ import java.io.File;
 import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -37,7 +36,6 @@ import javax.xml.transform.TransformerFactory;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
-import io.mycat.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.w3c.dom.Document;
@@ -182,7 +180,7 @@ public final class FirewallConfig {
 	
 	public synchronized static void updateToFile(String host, List<UserConfig> userConfigs) throws Exception{
 		LOGGER.debug("set white host:" + host + "user:" + userConfigs);
-		String filename = SystemConfig.getHomePath()+ File.separator +"conf"+ File.separator +"server.xml";
+		String filename = SystemConfig.getHomePath()+ File.separator +"conf"+ File.separator + "server.xml";
 		//String filename = "E:\\MyProject\\Mycat-Server\\src\\main\\resources\\server.xml";
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();

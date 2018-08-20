@@ -18,7 +18,6 @@ import io.mycat.config.loader.xml.XMLSchemaLoader;
 import io.mycat.config.model.SchemaConfig;
 import io.mycat.config.model.SystemConfig;
 import io.mycat.route.factory.RouteStrategyFactory;
-import io.mycat.server.interceptor.impl.GlobalTableUtil;
 import io.mycat.util.StringUtil;
 import junit.framework.Assert;
 import org.junit.Test;
@@ -42,8 +41,8 @@ public class DruidMysqlCreateTableTest
 
 
     public DruidMysqlCreateTableTest() {
-		String schemaFile = "/route/schema.xml";
-		String ruleFile = "/route/rule.xml";
+		String schemaFile = "/backup/route/schema.xml";
+		String ruleFile = "/backup/route/rule.xml";
 		SchemaLoader schemaLoader = new XMLSchemaLoader(schemaFile, ruleFile);
 		schemaMap = schemaLoader.getSchemas();
 		MycatServer.getInstance().getConfig().getSchemas().putAll(schemaMap);

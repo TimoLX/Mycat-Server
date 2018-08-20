@@ -32,7 +32,7 @@ public class AutoPartitionByLongTest {
 	@Test
 	public void test()  {
 		AutoPartitionByLong autoPartition=new AutoPartitionByLong();
-		autoPartition.setMapFile("autopartition-long.txt");
+		autoPartition.setMapFile("backup/autopartition-long.txt");
 		autoPartition.init();
 		String idVal="0";
 		Assert.assertEquals(true, 0==autoPartition.calculate(idVal));

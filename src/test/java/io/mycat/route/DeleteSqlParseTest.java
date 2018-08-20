@@ -27,8 +27,8 @@ public class DeleteSqlParseTest {
     protected RouteStrategy routeStrategy;
 
 	public DeleteSqlParseTest() {
-		String schemaFile = "/route/schema.xml";
-		String ruleFile = "/route/rule.xml";
+		String schemaFile = "/backup/route/schema.xml";
+		String ruleFile = "/backup/route/rule.xml";
 		SchemaLoader schemaLoader = new XMLSchemaLoader(schemaFile, ruleFile);
 		schemaMap = schemaLoader.getSchemas();
         RouteStrategyFactory.init();
@@ -38,7 +38,7 @@ public class DeleteSqlParseTest {
 	@Test
 	public void testDeleteToRoute() throws SQLNonTransientException {
 		String sql = "delete t  from offer as t  ";
-		SchemaConfig schema = schemaMap.get("config");
+		SchemaConfig schema = schemaMap.get("backup/config");
         RouteResultset rrs = routeStrategy.route(new SystemConfig(), schema, -1, sql, null,
                 null, cachePool);
         Assert.assertEquals(128, rrs.getNodes().length);

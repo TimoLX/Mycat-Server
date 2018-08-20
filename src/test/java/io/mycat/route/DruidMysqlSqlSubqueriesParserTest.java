@@ -11,9 +11,7 @@ import io.mycat.cache.LayerCachePool;
 import io.mycat.config.loader.SchemaLoader;
 import io.mycat.config.loader.xml.XMLSchemaLoader;
 import io.mycat.config.model.SchemaConfig;
-import io.mycat.config.model.SystemConfig;
 import io.mycat.route.factory.RouteStrategyFactory;
-import junit.framework.Assert;
 
 @SuppressWarnings("deprecation")
 public class DruidMysqlSqlSubqueriesParserTest
@@ -23,8 +21,8 @@ public class DruidMysqlSqlSubqueriesParserTest
     protected RouteStrategy routeStrategy;
 
 	public DruidMysqlSqlSubqueriesParserTest() {
-		String schemaFile = "/route/schema.xml";
-		String ruleFile = "/route/rule.xml";
+		String schemaFile = "/backup/route/schema.xml";
+		String ruleFile = "/backup/route/rule.xml";
 		SchemaLoader schemaLoader = new XMLSchemaLoader(schemaFile, ruleFile);
 		schemaMap = schemaLoader.getSchemas();
 		MycatServer.getInstance().getConfig().getSchemas().putAll(schemaMap);

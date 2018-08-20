@@ -54,10 +54,10 @@ public class ServerPrepareTest {
     	PreparedStatement pstmt = null;
     	ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
     	// 获取待存储图片输入流
-    	InputStream image0In = classLoader.getResourceAsStream("blob/image0.jpg");
-    	InputStream image1In = classLoader.getResourceAsStream("blob/image1.png");
-    	InputStream image2In = classLoader.getResourceAsStream("blob/image2.png");
-    	InputStream image3In = classLoader.getResourceAsStream("blob/image3.png");
+    	InputStream image0In = classLoader.getResourceAsStream("backup/blob/image0.jpg");
+    	InputStream image1In = classLoader.getResourceAsStream("backup/blob/image1.png");
+    	InputStream image2In = classLoader.getResourceAsStream("backup/blob/image2.png");
+    	InputStream image3In = classLoader.getResourceAsStream("backup/blob/image3.png");
     	
     	// 保存图片字节数据,待后面取回数据进行校验
     	byte[] image0Bytes = getBytes(image0In);

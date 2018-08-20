@@ -31,8 +31,8 @@ public class ConfigTest {
 	
 	public ConfigTest() {
 		
-		String schemaFile = "/config/schema.xml";
-		String ruleFile = "/config/rule.xml";
+		String schemaFile = "/backup/config/schema.xml";
+		String ruleFile = "/backup/config/rule.xml";
 		
 		XMLSchemaLoader schemaLoader = new XMLSchemaLoader(schemaFile, ruleFile);
 		XMLConfigLoader configLoader = new XMLConfigLoader(schemaLoader);

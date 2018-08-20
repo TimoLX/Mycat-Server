@@ -14,9 +14,6 @@ import io.mycat.config.loader.SchemaLoader;
 import io.mycat.config.loader.xml.XMLSchemaLoader;
 import io.mycat.config.model.SchemaConfig;
 import io.mycat.config.model.SystemConfig;
-import io.mycat.route.RouteResultset;
-import io.mycat.route.RouteService;
-import io.mycat.route.RouteStrategy;
 import io.mycat.route.factory.RouteStrategyFactory;
 import io.mycat.server.parser.ServerParse;
 
@@ -26,8 +23,8 @@ public class HintTest {
 	protected RouteStrategy routeStrategy;
 
 	public HintTest() {
-		String schemaFile = "/route/schema.xml";
-		String ruleFile = "/route/rule.xml";
+		String schemaFile = "/backup/route/schema.xml";
+		String ruleFile = "/backup/route/rule.xml";
 		SchemaLoader schemaLoader = new XMLSchemaLoader(schemaFile, ruleFile);
 		schemaMap = schemaLoader.getSchemas();
 		MycatServer.getInstance().getConfig().getSchemas().putAll(schemaMap);

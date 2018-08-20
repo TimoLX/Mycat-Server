@@ -41,7 +41,7 @@ public class PartitionByPrefixPatternTest {
 		PartitionByPrefixPattern autoPartition=new PartitionByPrefixPattern();
 		autoPartition.setPatternValue(32);
 		autoPartition.setPrefixLength(5);
-		autoPartition.setMapFile("partition_prefix_pattern.txt");
+		autoPartition.setMapFile("backup/partition_prefix_pattern.txt");
 		autoPartition.init();
 		
 		String idVal="gf89f9a";

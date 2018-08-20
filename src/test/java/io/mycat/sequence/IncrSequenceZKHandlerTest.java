@@ -46,7 +46,7 @@ public class IncrSequenceZKHandlerTest {
                 @Override
                 public void run() {
                     incrSequenceZKHandler[a] = new IncrSequenceZKHandler();
-                    Properties props = PropertiesUtil.loadProps("sequence_conf.properties");
+                    Properties props = PropertiesUtil.loadProps("backup/sequence_conf.properties");
                     try {
                         incrSequenceZKHandler[a].initializeZK(props, testingServer.getConnectString());
                     } catch (Exception e) {

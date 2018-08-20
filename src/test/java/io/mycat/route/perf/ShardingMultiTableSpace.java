@@ -41,8 +41,8 @@ public class ShardingMultiTableSpace {
     private static int total=1000000;
     protected LayerCachePool cachePool = new SimpleCachePool();
     public ShardingMultiTableSpace() throws InterruptedException {
-         String schemaFile = "/route/schema.xml";
- 		String ruleFile = "/route/rule.xml";
+         String schemaFile = "/backup/route/schema.xml";
+ 		String ruleFile = "/backup/route/rule.xml";
  		SchemaLoader schemaLoader = new XMLSchemaLoader(schemaFile, ruleFile);
  		schema = schemaLoader.getSchemas().get("cndb");
     }

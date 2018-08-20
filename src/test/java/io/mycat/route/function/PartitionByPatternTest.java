@@ -26,8 +26,6 @@ package io.mycat.route.function;
 import org.junit.Assert;
 import org.junit.Test;
 
-import io.mycat.route.function.PartitionByPattern;
-
 public class PartitionByPatternTest {
 
 	@Test
@@ -35,7 +33,7 @@ public class PartitionByPatternTest {
 		PartitionByPattern autoPartition = new PartitionByPattern();
 		autoPartition.setPatternValue(256);
 		autoPartition.setDefaultNode(2);
-		autoPartition.setMapFile("partition-pattern.txt");
+		autoPartition.setMapFile("backup/partition-pattern.txt");
 		autoPartition.init();
 		String idVal = "0";
 		Assert.assertEquals(true, 7 == autoPartition.calculate(idVal));

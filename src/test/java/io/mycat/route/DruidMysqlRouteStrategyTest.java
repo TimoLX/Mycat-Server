@@ -8,7 +8,6 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
-import org.junit.Before;
 import org.junit.Test;
 
 import com.alibaba.druid.sql.ast.SQLStatement;
@@ -21,9 +20,6 @@ import io.mycat.config.loader.SchemaLoader;
 import io.mycat.config.loader.xml.XMLSchemaLoader;
 import io.mycat.config.model.SchemaConfig;
 import io.mycat.config.model.SystemConfig;
-import io.mycat.route.RouteResultset;
-import io.mycat.route.RouteResultsetNode;
-import io.mycat.route.RouteStrategy;
 import io.mycat.route.factory.RouteStrategyFactory;
 import io.mycat.server.parser.ServerParse;
 import junit.framework.Assert;
@@ -35,8 +31,8 @@ public class DruidMysqlRouteStrategyTest extends TestCase {
     protected RouteStrategy routeStrategy ;
 
     public DruidMysqlRouteStrategyTest() {
-        String schemaFile = "/route/schema.xml";
-        String ruleFile = "/route/rule.xml";
+        String schemaFile = "/backup/route/schema.xml";
+        String ruleFile = "/backup/route/rule.xml";
         SchemaLoader schemaLoader = new XMLSchemaLoader(schemaFile, ruleFile);
         schemaMap = schemaLoader.getSchemas();
         MycatServer.getInstance().getConfig().getSchemas().putAll(schemaMap);
@@ -738,7 +734,7 @@ public class DruidMysqlRouteStrategyTest extends TestCase {
 
     public void testConfigSchema() throws Exception {
         try {
-            SchemaConfig schema = schemaMap.get("config");
+            SchemaConfig schema = schemaMap.get("backup/config");
             String sql = "select * from offer where offer_id=1";
             routeStrategy.route(new SystemConfig(), schema, 1, sql, null, null, cachePool);
             Assert.assertFalse(true);
@@ -746,14 +742,14 @@ public class DruidMysqlRouteStrategyTest extends TestCase {
             Assert.assertEquals("route rule for table OFFER is required: select * from offer where offer_id=1", e.getMessage());
         }
         try {
-            SchemaConfig schema = schemaMap.get("config");
+            SchemaConfig schema = schemaMap.get("backup/config");
             String sql = "select * from offer where col11111=1";
             routeStrategy.route(new SystemConfig(), schema, 1, sql, null, null, cachePool);
             Assert.assertFalse(true);
         } catch (Exception e) {
         }
         try {
-            SchemaConfig schema = schemaMap.get("config");
+            SchemaConfig schema = schemaMap.get("backup/config");
             String sql = "select * from offer ";
             routeStrategy.route(new SystemConfig(), schema, 1, sql, null, null, cachePool);
             Assert.assertFalse(true);
